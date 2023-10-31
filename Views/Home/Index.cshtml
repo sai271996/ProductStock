@@ -1,0 +1,75 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<head>
+    <link href="~/CSS/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Jquery/jquery.dataTables.min.js" defer></script>
+    <script src="~/Jquery/Product_Register.js"></script>
+
+    <style>
+        .container table {
+            margin: auto;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .container button {
+            position: absolute;
+            left: 42%;
+        }
+
+        .buttton {
+            margin-left: 42%;
+        }
+        .container-fluid #usertable {
+            width: 700px;
+        }
+    </style>
+</head>
+
+<div class="container">
+    <h2>Product Register</h2><br />
+    <form>
+        <table>
+            <tr>
+                <td><label id="lblproduct"></label>Product Name </td>
+                <td> <input type="text" id="txtproudct" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td> <label id="lblprice"></label>Price </td>
+                <td> <input type="text" id="txtprice" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td><label id="lblstock"></label>Total stock</td>
+                <td><input type="text" id="txtstock" class="form-control" /></td>
+                <td><input type="button" id="btncalc" value="Calculate" class="form-control btn btn-primary" /></td>
+            </tr>
+            <tr>
+                <td><label id="lblproduct"></label>Total Price </td>
+                <td><input type="text" id="txttotalprice" class="form-control" /></td>
+            </tr>
+        </table>
+    </form><br />
+    <div class="buttton">
+        <input type="button" id="btnsave" value="Save" style="width:100px;" class="form-control btn btn-primary" />
+        <input type="button" id="btnupdate" value="Update" style="width:100px;" class="form-control btn btn-success" />
+    </div><br />
+</div>
+    <div class="container-fluid">
+        <table id="Usertable" class="display">
+            <thead>
+                <tr>
+                    <th>Product_ID</th>
+                    <th>Product_Name</th>
+                    <th>Price</th>
+                    <th>Total_stocks</th>
+                    <th>Total_Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+            </tbody>
+        </table>
+    </div>

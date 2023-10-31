@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "BuyList";
+}
+
+
+<head>
+    <link href="~/CSS/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Jquery/Product_sale_list.js"></script>
+    <script src="~/Jquery/jquery.dataTables.min.js" defer></script>
+    <style>
+        h2 {
+            text-align: center;
+        }
+        #btnreport
+        {
+            margin-left: 42%;
+        }
+    </style>
+</head>
+
+<div class="container-fluid">
+    <h2>Product sales Record</h2>
+    <table id="Usertable" class="display">
+        <thead>
+            <tr>
+                <th>Product_ID</th>
+                <th>Product_Name</th>
+                <th>Price</th>
+                <th>stocks_buy</th>
+                <th>Total_Price</th>
+                <th>Buy_date</th>
+               
+            </tr>
+        </thead>
+        <tbody class="tbody">
+        </tbody>
+    </table>
+    <div class="report">
+        <input type="button" id="btnreport" style="width:150px" value="report" class="form-control btn btn-warning" />
+    </div>
+</div>

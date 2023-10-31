@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "buy";
+}
+<head>
+    <script src="~/Jquery/buy_product.js"></script>
+    
+    <style>
+        .container table {
+            margin:auto;
+        }
+        h2{
+            text-align:center;
+        }
+        .button #btnBuy{
+            margin-left:42%; 
+        }
+
+    </style>
+
+</head>
+
+<div class="container">
+    <h2>Buy Product</h2><br />
+    <form>
+        <table>
+            <tr>
+                <td><label id="lblproduct">Date</label></td>
+                <td> <input type="text" id="txtdate" class="form-control" /></td>
+                <td> <input type="button" value="Today date " id="btndate" class="form-control  btn btn-primary" /></td>
+            <tr>
+                <td><label id="lblproduct">Product Name</label> </td>
+                <td>
+                    @Html.DropDownList("product", (List<SelectListItem>)ViewBag.product, "Select a product", new { @class = "form-control", @id = "Productlist" })
+                </td>
+
+            </tr>
+            <tr>
+                <td> <label id="lblprice"></label>Product Id </td>
+                <td> <input type="text" id="txtproduct_id" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td> <label id="lblprice"></label>Price </td>
+                <td> <input type="text" id="txtprice" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td> <label id="lblprice">Available stocks</label></td>
+                <td> <input type="text" id="txtavilable" class="form-control" /></td>
+            </tr>
+            <tr>
+                <td><label id="lblstock"></label>Stocks buy</td>
+                <td><input type="text" id="txtstock" class="form-control" /></td>
+                <td><input type="button" id="btncalc" value="Calculate" class="form-control btn btn-primary" /></td>
+            </tr>
+            <tr>
+                <td><label id="lblproduct"></label>Total Price </td>
+                <td><input type="text" id="txttotalprice" class="form-control" /></td>
+            </tr>
+        </table><br />
+    </form>
+    <div class="button">
+        <input type="button" value="Buy" id="btnBuy" style="width:220px;" class="form-control btn btn-primary" />
+    </div>
+    </div>
