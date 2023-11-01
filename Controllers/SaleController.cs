@@ -146,18 +146,18 @@ namespace ProductStock.Controllers
                 DataTable dt2 = new DataTable();
                 sda1.Fill(dt2);
 
-               /* SqlCommand cmd2 = new SqlCommand("BUY", con);
+                SqlCommand cmd2 = new SqlCommand("BUY", con);
                 cmd2.CommandType = CommandType.StoredProcedure;
                 cmd2.Parameters.AddWithValue("@Product_Id", SqlDbType.Int).Value = 0;
                 cmd2.Parameters.AddWithValue("@Product_Name", SqlDbType.VarChar).Value = "";
                 cmd2.Parameters.AddWithValue("@Price", SqlDbType.BigInt).Value = 0;
                 cmd2.Parameters.AddWithValue("@Stocks_buy", SqlDbType.BigInt).Value = 0;
                 cmd2.Parameters.AddWithValue("@Total_price", SqlDbType.BigInt).Value = 0;
-                cmd2.Parameters.AddWithValue("@Buy_date", SqlDbType.Date).Value = null;
+                cmd2.Parameters.AddWithValue("@Buy_date", SqlDbType.VarChar).Value = "";
                 cmd2.Parameters.AddWithValue("@operation", SqlDbType.VarChar).Value = "Week";
                 SqlDataAdapter sda2 = new SqlDataAdapter(cmd2);
                 DataTable dt3 = new DataTable();
-                sda2.Fill(dt3);*/
+                sda2.Fill(dt3);
 
 
                 var worksheet = package.Workbook.Worksheets.Add("Daily_Report");
@@ -168,7 +168,7 @@ namespace ProductStock.Controllers
                 // Fill the worksheet with data from the DataTable
                 worksheet.Cells["A1"].LoadFromDataTable(dt1, true);
                 worksheet1.Cells["A1"].LoadFromDataTable(dt2, true);
-                //worksheet2.Cells["A1"].LoadFromDataTable(dt3, true);
+                worksheet2.Cells["A1"].LoadFromDataTable(dt3, true);
 
                 worksheet.Cells["A1:F1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
                 worksheet.Cells["A1:F1"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Orange);
@@ -176,8 +176,8 @@ namespace ProductStock.Controllers
                 worksheet1.Cells["A1:F1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
                 worksheet1.Cells["A1:F1"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Orange);
 
-                //worksheet2.Cells["A1:F1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
-                //worksheet2.Cells["A1:F1"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Orange)
+                worksheet2.Cells["A1:F1"].Style.Fill.PatternType = ExcelFillStyle.Solid;
+                worksheet2.Cells["A1:F1"].Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.Orange)
 
                 var headerRow = worksheet.Cells["A1:F1"];
 
